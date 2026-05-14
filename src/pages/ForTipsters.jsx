@@ -142,7 +142,7 @@ export default function ForTipsters() {
       <PageHero
         eyebrow="For Tipsters"
         title="Post your slip.<br /><em>Get paid.</em>"
-        subtitle="Turn your betting knowledge into a real income stream. Every winning slip earns you ₦1,000 from escrow — automatically, no chasing needed."
+        subtitle="Turn your betting knowledge into a real income stream. Every winning slip earns you ₦900 from escrow — automatically, no chasing needed."
       />
 
       <StartSection>
