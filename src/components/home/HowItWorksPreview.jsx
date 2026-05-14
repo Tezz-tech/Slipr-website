@@ -49,16 +49,16 @@ const ConnectorLine = styled.div`
 `;
 
 const StepCard = styled(motion.div)`
-  background: rgba(255,255,255,0.80);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255,255,255,0.95);
+  background: rgba(255,255,255,0.04);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border: 1px solid rgba(255,255,255,0.08);
   border-radius: ${radii.xl};
   padding: 32px 28px;
   position: relative;
   z-index: 1;
   box-shadow: ${shadows.sm};
-  transition: box-shadow 0.25s;
+  transition: box-shadow 0.25s, transform 0.25s;
 
   &:hover {
     box-shadow: ${shadows.cardHover};
@@ -116,7 +116,7 @@ const steps = [
     n: '03',
     active: false,
     title: 'Win = Pay. Lose = Refund.',
-    desc: 'Slip wins? The tipster gets ₦1,000 from escrow. Slip loses? The buyer gets ₦1,000 back to their wallet. Automatic.',
+    desc: 'Slip wins? The tipster gets ₦900 from escrow. Slip loses? The buyer gets ₦1,000 back to their wallet. Automatic.',
   },
 ];
 

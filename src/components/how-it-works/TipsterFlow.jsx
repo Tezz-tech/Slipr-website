@@ -123,7 +123,7 @@ const steps = [
     highlighted: false,
     icon: '✅',
     title: 'Slip wins — escrow releases to you',
-    desc: 'When your slip wins and screenshots are verified, ₦1,000 is released directly to your Slipr wallet. No delays, no admin approval needed.',
+    desc: 'When your slip wins and results are auto-verified, ₦900 is released directly to your Slipr wallet. No delays, no admin approval needed.',
     tag: 'Average payout within 15 minutes',
   },
   {

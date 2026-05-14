@@ -28,10 +28,10 @@ const variants = {
     &:hover { border-color: ${colors.accent}; color: ${colors.accent}; }
   `,
   dark: css`
-    background: ${colors.text.primary};
-    color: ${colors.text.inverse};
-    border: 2px solid transparent;
-    &:hover { background: #2c2c2e; box-shadow: 0 8px 28px rgba(28,28,30,0.25); }
+    background: ${colors.surfaceElevated};
+    color: ${colors.text.primary};
+    border: 2px solid ${colors.border};
+    &:hover { background: ${colors.surface}; border-color: ${colors.accent}; box-shadow: 0 8px 28px rgba(0,194,168,0.15); }
   `,
 };
 

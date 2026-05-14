@@ -21,7 +21,8 @@ const Section = styled.section`
 const Banner = styled(motion.div)`
   max-width: 1100px;
   margin: 0 auto;
-  background: ${colors.text.primary};
+  background: linear-gradient(135deg, ${colors.surface} 0%, ${colors.surfaceElevated} 100%);
+  border: 1px solid rgba(255,255,255,0.08);
   border-radius: 28px;
   padding: 80px 80px;
   text-align: center;

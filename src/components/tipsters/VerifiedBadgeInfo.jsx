@@ -29,7 +29,7 @@ const Inner = styled.div`
 `;
 
 const BadgeVisual = styled(motion.div)`
-  background: ${colors.text.primary};
+  background: ${colors.surface};
   border-radius: ${radii.xl};
   padding: 48px 32px;
   text-align: center;
@@ -115,10 +115,10 @@ const CriteriaItem = styled(motion.div)`
   align-items: flex-start;
   gap: 14px;
   padding: 18px 20px;
-  background: rgba(255,255,255,0.80);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255,255,255,0.95);
+  background: rgba(255,255,255,0.04);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border: 1px solid rgba(255,255,255,0.08);
   border-radius: ${radii.lg};
   box-shadow: ${shadows.xs};
 `;
@@ -152,7 +152,7 @@ const CriteriaDesc = styled.div`
 const criteria = [
   { met: true, icon: '📊', label: 'Minimum 50 slips posted', desc: 'Your track record needs a real sample size before we can vouch for you.' },
   { met: true, icon: '✅', label: 'Win rate above 60%', desc: 'Consistent performance over at least 50 slips. Not one lucky streak.' },
-  { met: false, icon: '📸', label: 'Screenshot verification enabled', desc: 'You must enable screenshot proof for your slips. No proof, no verification.' },
+  { met: false, icon: '📡', label: 'Results auto-verified on your slips', desc: 'All your slip results must be settled via our live sports data verification — no manual overrides.' },
   { met: false, icon: '⭐', label: 'Average review rating 4.2+', desc: 'Buyers who bought your slips have rated you fairly and highly.' },
   { met: false, icon: '🔒', label: 'No open disputes in 90 days', desc: 'Clean record — no unresolved disputes or complaints from buyers.' },
 ];

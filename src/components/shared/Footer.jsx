@@ -10,8 +10,8 @@ import { motion } from 'framer-motion';
 import { colors, fonts, spacing, breakpoints, radii } from '../../theme';
 
 const FooterWrapper = styled.footer`
-  background: ${colors.text.primary};
-  color: ${colors.text.inverse};
+  background: ${colors.bgAlt};
+  color: ${colors.text.primary};
   padding: 72px 80px 0;
 
   @media (max-width: ${breakpoints.lg}) { padding: 64px 40px 0; }

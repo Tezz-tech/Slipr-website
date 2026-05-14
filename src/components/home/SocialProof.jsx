@@ -50,10 +50,10 @@ const Row = styled.div`
 `;
 
 const TipsterCard = styled.div`
-  background: rgba(255,255,255,0.90);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255,255,255,0.95);
+  background: rgba(255,255,255,0.04);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border: 1px solid rgba(255,255,255,0.08);
   border-radius: ${radii.xl};
   padding: 18px 20px;
   display: flex;

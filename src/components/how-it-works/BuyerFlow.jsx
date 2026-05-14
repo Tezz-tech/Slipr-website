@@ -118,7 +118,7 @@ const steps = [
     highlighted: false,
     icon: '🏆',
     title: 'Slip wins — tipster gets paid',
-    desc: 'If the slip wins and screenshots are verified, the ₦1,000 escrow is released to the tipster. You walked away with the winnings from your bet.',
+    desc: 'If the slip wins and results are auto-verified via live sports data, escrow is released to the tipster. You walked away with the winnings from your bet.',
     tag: null,
   },
   {

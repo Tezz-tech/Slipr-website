@@ -79,9 +79,9 @@ export default function TermsOfService() {
       <p>When a Buyer unlocks a slip, <strong>₦100</strong> is immediately and irrevocably paid to Slipr as a platform fee. The remaining <strong>₦1,000</strong> (or configured escrow amount) is held by Slipr in escrow on behalf of the transaction parties.</p>
       <p>Escrow release conditions:</p>
       <ul>
-        <li><strong>Win:</strong> Tipster uploads result screenshot within 4 hours of event conclusion. Upon verification, escrow is released to the Tipster.</li>
+        <li><strong>Win:</strong> Result is confirmed automatically via live sports data. Upon verification, ₦900 is released to the Tipster wallet (Slipr retains a 10% commission of ₦100).</li>
         <li><strong>Loss:</strong> Upon confirmed loss result, escrow is automatically refunded to the Buyer's wallet.</li>
-        <li><strong>No result submitted:</strong> If a Tipster fails to submit a result within 4 hours, the escrow defaults to a Buyer refund.</li>
+        <li><strong>Unverifiable result:</strong> If a result cannot be confirmed within 4 hours of event conclusion, the escrow defaults to a Buyer refund.</li>
         <li><strong>Dispute:</strong> Escrow is held pending Slipr's review, which will be completed within 24 hours.</li>
       </ul>
 
@@ -89,8 +89,7 @@ export default function TermsOfService() {
       <p>As a Tipster, you agree to:</p>
       <ul>
         <li>Post only legitimate, original slip codes that you have personally selected</li>
-        <li>Submit accurate result screenshots within 4 hours of event conclusion</li>
-        <li>Not manipulate, alter, or fabricate result screenshots in any form</li>
+        <li>Not attempt to manipulate, misrepresent, or interfere with result verification in any form</li>
         <li>Not share slip codes outside the Platform after receiving buyer payments</li>
         <li>Accept that your win/loss record is permanently public and cannot be altered</li>
       </ul>

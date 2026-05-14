@@ -22,10 +22,10 @@ const VisualWrapper = styled.div`
 `;
 
 const PaymentBar = styled(motion.div)`
-  background: rgba(255,255,255,0.85);
+  background: rgba(255,255,255,0.04);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255,255,255,0.95);
+  border: 1px solid rgba(255,255,255,0.08);
   border-radius: ${radii.xl};
   padding: 28px;
   margin-bottom: 24px;
@@ -88,10 +88,10 @@ const ProtectionCards = styled.div`
 const ProtCard = styled(motion.div)`
   border-radius: ${radii.lg};
   padding: 22px;
-  background: rgba(255,255,255,0.80);
+  background: rgba(255,255,255,0.04);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255,255,255,0.95);
+  border: 1px solid rgba(255,255,255,0.08);
   box-shadow: ${shadows.xs};
 `;
 
@@ -116,7 +116,7 @@ const ProtDesc = styled.p`
 const protections = [
   { icon: '🔒', title: 'Escrow holds your ₦1,000', desc: 'From the moment you pay, your ₦1,000 is locked in Slipr\'s escrow — not in the tipster\'s hands.' },
   { icon: '⚡', title: 'Automatic settlement', desc: 'No need to raise a claim. The system checks results and moves money without you lifting a finger.' },
-  { icon: '🔍', title: 'Screenshot verification', desc: 'Tipsters must upload official betting platform screenshots. We verify before releasing escrow.' },
+  { icon: '📡', title: 'Auto-verified results', desc: 'Results are verified automatically using live sports data. Escrow releases only after confirmation — no manual steps needed.' },
   { icon: '🛡️', title: 'Dispute protection', desc: 'If a result is unclear or contested, our review team steps in and resolves it fairly within 24 hours.' },
 ];
 

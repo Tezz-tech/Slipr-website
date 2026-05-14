@@ -25,10 +25,10 @@ const List = styled(motion.div)`
 `;
 
 const Item = styled.div`
-  background: rgba(255,255,255,0.84);
+  background: rgba(255,255,255,0.04);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255,255,255,0.95);
+  border: 1px solid rgba(255,255,255,0.08);
   border-radius: ${radii.lg};
   overflow: hidden;
   box-shadow: ${shadows.xs};

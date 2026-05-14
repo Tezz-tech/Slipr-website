@@ -27,7 +27,6 @@ const Card = styled(motion.div)`
   box-shadow: ${shadows.sm};
   transition: box-shadow ${transitions.base};
 
-  /* Subtle inner highlight at top */
   &::before {
     content: '';
     position: absolute;
@@ -35,7 +34,7 @@ const Card = styled(motion.div)`
     left: 16px;
     right: 16px;
     height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.9), transparent);
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.12), transparent);
     pointer-events: none;
   }
 `;

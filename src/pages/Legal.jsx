@@ -9,6 +9,7 @@ import styled from 'styled-components';
 import { motion, AnimatePresence } from 'framer-motion';
 import { colors, radii, breakpoints, shadows } from '../theme';
 import PageHero from '../components/shared/PageHero';
+import SectionBridge from '../components/shared/SectionBridge';
 import TermsOfService, { tocSections as tosSections } from '../components/legal/TermsOfService';
 import PrivacyPolicy, { tocSections as ppSections } from '../components/legal/PrivacyPolicy';
 import RefundPolicy, { tocSections as rpSections } from '../components/legal/RefundPolicy';
@@ -87,10 +88,10 @@ const SidebarLink = styled.a`
 `;
 
 const ContentPane = styled(motion.div)`
-  background: rgba(255,255,255,0.88);
+  background: rgba(255,255,255,0.04);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255,255,255,0.95);
+  border: 1px solid rgba(255,255,255,0.08);
   border-radius: 24px;
   padding: 48px;
   box-shadow: ${shadows.sm};
@@ -183,6 +184,17 @@ export default function Legal() {
           </AnimatePresence>
         </ContentLayout>
       </PageWrapper>
+
+      <SectionBridge
+        variant="wave"
+        label="HAVE QUESTIONS?"
+        title="We keep things <em>transparent</em>"
+        subtitle="Our policies exist to protect you. If anything is unclear, our FAQ has plain-language answers."
+        cta="Visit the FAQ"
+        to="/faq"
+        achievement={{ icon: '📋', text: 'Policy Reviewed' }}
+        xp={50}
+      />
     </main>
   );
 }

@@ -38,10 +38,10 @@ const FlowGrid = styled.div`
 `;
 
 const Node = styled(motion.div)`
-  background: rgba(255,255,255,0.88);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255,255,255,0.95);
+  background: rgba(255,255,255,0.04);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border: 1px solid rgba(255,255,255,0.09);
   border-radius: ${radii.xl};
   padding: 28px 20px;
   text-align: center;
@@ -99,7 +99,7 @@ const ArrowLabel = styled.span`
 `;
 
 const EscrowNode = styled(motion.div)`
-  background: ${colors.text.primary};
+  background: ${colors.surface};
   border-radius: ${radii.xl};
   padding: 28px 20px;
   text-align: center;

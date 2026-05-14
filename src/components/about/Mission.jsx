@@ -143,7 +143,7 @@ export default function Mission() {
           <CardList>
             <CardListItem $bullet="→">Escrow holds payment — tipster only earns when they're right</CardListItem>
             <CardListItem $bullet="→">Buyers get a full refund when slips lose</CardListItem>
-            <CardListItem $bullet="→">Screenshot verification before any escrow releases</CardListItem>
+            <CardListItem $bullet="→">Auto-verified results via live sports data before any escrow releases</CardListItem>
             <CardListItem $bullet="→">Permanent, tamper-proof public record of every result</CardListItem>
             <CardListItem $bullet="→">Verified badges reward consistency, not just marketing</CardListItem>
           </CardList>

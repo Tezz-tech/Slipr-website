@@ -1,5 +1,5 @@
 /**
- * TrustSafety — Screenshot verification, dispute system, how to read a tipster profile.
+ * TrustSafety — Auto-verified results, dispute system, how to read a tipster profile.
  */
 import React from 'react';
 import styled from 'styled-components';
@@ -60,10 +60,10 @@ const ProfileTitle = styled.h3`
 const MockProfile = styled(motion.div)`
   max-width: 560px;
   margin: 0 auto;
-  background: rgba(255,255,255,0.88);
+  background: rgba(255,255,255,0.04);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255,255,255,0.95);
+  border: 1px solid rgba(255,255,255,0.08);
   border-radius: 24px;
   padding: 32px;
   box-shadow: ${shadows.md};
@@ -171,9 +171,9 @@ const AnnLabel = styled.span`
 `;
 
 const trustItems = [
-  { icon: '📸', title: 'Screenshot Verification', desc: 'Every settled slip requires an official betting platform screenshot. Manual upload + automated cross-check.' },
+  { icon: '📡', title: 'Auto-Verified Results', desc: 'Every settled slip is verified automatically using live sports data — no manual step, no waiting on anyone.' },
   { icon: '⚖️', title: 'Dispute Resolution', desc: 'Any contested result is reviewed by our team within 24 hours. Escrow stays locked until we\'re confident.' },
-  { icon: '🚫', title: 'Bad Actor Detection', desc: 'Tipsters who manipulate results or post fake screenshots are permanently banned. No warnings.' },
+  { icon: '🚫', title: 'Bad Actor Detection', desc: 'Tipsters who attempt to manipulate results or game the system are permanently banned. No warnings.' },
   { icon: '⭐', title: 'Buyer Reviews', desc: 'Every purchase comes with a review slot. Tipster ratings are calculated from verified buyer feedback only.' },
   { icon: '📊', title: 'Public Win History', desc: 'Every result — win or loss — is recorded permanently on the tipster\'s public profile. No erasing history.' },
   { icon: '🔐', title: 'Secure Payments', desc: 'All transactions are encrypted. Card data is never stored on Slipr\'s servers.' },
@@ -257,7 +257,7 @@ export default function TrustSafety() {
           </Annotation>
           <Annotation $bg={colors.accentLight} $border={colors.accent}>
             <AnnIcon>📊</AnnIcon>
-            <AnnText>All results have screenshot proof attached</AnnText>
+            <AnnText>All results auto-verified via live sports data</AnnText>
             <AnnLabel $c={colors.accent}>Verified</AnnLabel>
           </Annotation>
           <Annotation $bg="rgba(245,166,35,0.08)" $border="#F5A623">

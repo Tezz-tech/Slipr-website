@@ -90,7 +90,7 @@ const SocialBtn = styled.a`
   height: 40px;
   border-radius: 12px;
   border: 1.5px solid ${colors.border};
-  background: rgba(255,255,255,0.6);
+  background: rgba(255,255,255,0.05);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -107,10 +107,10 @@ const SocialBtn = styled.a`
 `;
 
 const FormCard = styled.div`
-  background: rgba(255,255,255,0.88);
+  background: rgba(255,255,255,0.04);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255,255,255,0.95);
+  border: 1px solid rgba(255,255,255,0.08);
   border-radius: 24px;
   padding: 36px;
   box-shadow: ${shadows.md};

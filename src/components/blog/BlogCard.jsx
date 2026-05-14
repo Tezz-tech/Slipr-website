@@ -9,10 +9,10 @@ import { motion } from 'framer-motion';
 import { colors, radii, shadows } from '../../theme';
 
 const Card = styled(motion.article)`
-  background: rgba(255,255,255,0.85);
+  background: rgba(255,255,255,0.04);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255,255,255,0.95);
+  border: 1px solid rgba(255,255,255,0.08);
   border-radius: 20px;
   overflow: hidden;
   box-shadow: ${shadows.sm};

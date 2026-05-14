@@ -25,14 +25,14 @@ const Nav = styled(motion.nav)`
   transition: background ${transitions.slow}, border-color ${transitions.slow}, box-shadow ${transitions.slow};
 
   background: ${({ $scrolled }) => $scrolled
-    ? 'rgba(248, 249, 250, 0.82)'
+    ? 'rgba(6, 6, 14, 0.88)'
     : 'transparent'};
-  backdrop-filter: ${({ $scrolled }) => $scrolled ? 'blur(16px) saturate(180%)' : 'none'};
-  -webkit-backdrop-filter: ${({ $scrolled }) => $scrolled ? 'blur(16px) saturate(180%)' : 'none'};
+  backdrop-filter: ${({ $scrolled }) => $scrolled ? 'blur(20px) saturate(180%)' : 'none'};
+  -webkit-backdrop-filter: ${({ $scrolled }) => $scrolled ? 'blur(20px) saturate(180%)' : 'none'};
   border-bottom: 1px solid ${({ $scrolled }) => $scrolled
-    ? 'rgba(0,0,0,0.06)'
+    ? 'rgba(255,255,255,0.07)'
     : 'transparent'};
-  box-shadow: ${({ $scrolled }) => $scrolled ? '0 2px 20px rgba(0,0,0,0.06)' : 'none'};
+  box-shadow: ${({ $scrolled }) => $scrolled ? '0 2px 24px rgba(0,0,0,0.4)' : 'none'};
 
   @media (max-width: ${breakpoints.lg}) {
     padding: 0 24px;
@@ -73,7 +73,7 @@ const NavItem = styled(NavLink)`
 
   &:hover {
     color: ${colors.text.primary};
-    background: rgba(0,0,0,0.04);
+    background: rgba(255,255,255,0.06);
   }
 
   &.active {
@@ -151,13 +151,13 @@ const MobileMenu = styled(motion.div)`
   top: 68px;
   left: 0;
   right: 0;
-  background: rgba(248, 249, 250, 0.96);
+  background: rgba(6, 6, 14, 0.97);
   backdrop-filter: blur(20px) saturate(180%);
   -webkit-backdrop-filter: blur(20px) saturate(180%);
-  border-bottom: 1px solid rgba(0,0,0,0.07);
+  border-bottom: 1px solid rgba(255,255,255,0.07);
   padding: 20px 20px 28px;
   z-index: ${zIndex.navbar - 1};
-  box-shadow: 0 16px 40px rgba(0,0,0,0.10);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.6);
 `;
 
 const MobileLinks = styled.div`
@@ -174,7 +174,7 @@ const MobileNavItem = styled(NavLink)`
   border-radius: ${radii.md};
   transition: color ${transitions.fast}, background ${transitions.fast};
   &.active { color: ${colors.accent}; background: ${colors.accentLight}; font-weight: 600; }
-  &:hover { color: ${colors.text.primary}; background: rgba(0,0,0,0.04); }
+  &:hover { color: ${colors.text.primary}; background: rgba(255,255,255,0.06); }
 `;
 
 const MobileDivider = styled.div`

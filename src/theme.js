@@ -1,30 +1,30 @@
-/**
- * Slipr Design System — Single source of truth for all brand tokens.
- * Every component must import from here. Never hardcode values in components.
- */
-
 export const colors = {
-  background: '#F8F9FA',
-  surface: '#EEEFF1',
-  surfaceElevated: '#FFFFFF',
+  bg: '#06060E',
+  background: '#06060E',
+  bgAlt: '#0C0C1A',
+  surface: '#11111E',
+  surfaceElevated: '#191928',
   text: {
-    primary: '#1C1C1E',
-    secondary: '#8A8A8E',
-    inverse: '#FFFFFF',
-    muted: '#AEAEB2',
+    primary: '#F0F0F8',
+    secondary: '#8A8AA8',
+    inverse: '#06060E',
+    muted: '#4A4A68',
   },
   accent: '#00C2A8',
-  accentLight: 'rgba(0, 194, 168, 0.12)',
-  accentMid: 'rgba(0, 194, 168, 0.24)',
+  accentLight: 'rgba(0, 194, 168, 0.10)',
+  accentMid: 'rgba(0, 194, 168, 0.22)',
+  accentBright: '#00E8C8',
   win: '#2ECC71',
   winLight: 'rgba(46, 204, 113, 0.12)',
   loss: '#E74C3C',
   lossLight: 'rgba(231, 76, 60, 0.12)',
   verified: '#F5A623',
   verifiedLight: 'rgba(245, 166, 35, 0.12)',
-  border: 'rgba(0, 0, 0, 0.06)',
-  borderLight: 'rgba(255, 255, 255, 0.8)',
-  overlay: 'rgba(28, 28, 30, 0.6)',
+  border: 'rgba(255, 255, 255, 0.07)',
+  borderBright: 'rgba(255, 255, 255, 0.14)',
+  overlay: 'rgba(0, 0, 0, 0.7)',
+  gold: '#FFD700',
+  goldLight: 'rgba(255, 215, 0, 0.12)',
 };
 
 export const fonts = {
@@ -59,32 +59,32 @@ export const radii = {
 };
 
 export const shadows = {
-  xs: '0 1px 3px rgba(0,0,0,0.04)',
-  sm: '0 2px 8px rgba(0,0,0,0.06)',
-  md: '0 4px 20px rgba(0,0,0,0.08)',
-  lg: '0 8px 40px rgba(0,0,0,0.10)',
-  xl: '0 20px 60px rgba(0,0,0,0.14)',
-  glow: '0 0 40px rgba(0,194,168,0.20)',
-  glowMd: '0 8px 32px rgba(0,194,168,0.18)',
-  cardHover: '0 12px 40px rgba(0,0,0,0.12), 0 4px 16px rgba(0,194,168,0.10)',
-  winGlow: '0 0 30px rgba(46,204,113,0.20)',
+  xs: '0 1px 3px rgba(0,0,0,0.3)',
+  sm: '0 2px 8px rgba(0,0,0,0.4)',
+  md: '0 4px 20px rgba(0,0,0,0.5)',
+  lg: '0 8px 40px rgba(0,0,0,0.6)',
+  xl: '0 20px 60px rgba(0,0,0,0.7)',
+  glow: '0 0 40px rgba(0,194,168,0.25)',
+  glowMd: '0 8px 32px rgba(0,194,168,0.20)',
+  cardHover: '0 12px 40px rgba(0,0,0,0.5), 0 4px 16px rgba(0,194,168,0.12)',
+  winGlow: '0 0 30px rgba(46,204,113,0.22)',
 };
 
 export const glass = {
   light: {
-    background: 'rgba(255, 255, 255, 0.72)',
-    backdropFilter: 'blur(16px) saturate(180%)',
-    border: '1px solid rgba(255, 255, 255, 0.90)',
-  },
-  dark: {
-    background: 'rgba(28, 28, 30, 0.72)',
-    backdropFilter: 'blur(16px) saturate(180%)',
+    background: 'rgba(255, 255, 255, 0.04)',
+    backdropFilter: 'blur(20px) saturate(180%)',
     border: '1px solid rgba(255, 255, 255, 0.08)',
   },
+  dark: {
+    background: 'rgba(6, 6, 14, 0.72)',
+    backdropFilter: 'blur(20px) saturate(180%)',
+    border: '1px solid rgba(255, 255, 255, 0.07)',
+  },
   teal: {
-    background: 'rgba(0, 194, 168, 0.08)',
-    backdropFilter: 'blur(12px)',
-    border: '1px solid rgba(0, 194, 168, 0.20)',
+    background: 'rgba(0, 194, 168, 0.06)',
+    backdropFilter: 'blur(16px)',
+    border: '1px solid rgba(0, 194, 168, 0.18)',
   },
 };
 
@@ -113,7 +113,6 @@ export const zIndex = {
   toast: 300,
 };
 
-// Framer Motion variant presets
 export const motionVariants = {
   fadeUp: {
     hidden: { opacity: 0, y: 30 },
@@ -132,7 +131,10 @@ export const motionVariants = {
     visible: { transition: { staggerChildren: 0.14 } },
   },
   cardHover: {
-    rest: { y: 0, boxShadow: '0 4px 20px rgba(0,0,0,0.08)' },
-    hover: { y: -6, boxShadow: '0 12px 40px rgba(0,0,0,0.12), 0 4px 16px rgba(0,194,168,0.10)', transition: { duration: 0.25, ease: [0.23, 1, 0.32, 1] } },
+    rest: { y: 0, boxShadow: '0 4px 20px rgba(0,0,0,0.4)' },
+    hover: { y: -6, boxShadow: '0 12px 40px rgba(0,0,0,0.5), 0 4px 16px rgba(0,194,168,0.12)', transition: { duration: 0.25, ease: [0.23, 1, 0.32, 1] } },
   },
 };
+
+// Backward compat aliases (used by old light-theme code)
+export const background = colors.bg;

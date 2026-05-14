@@ -73,7 +73,7 @@ const features = [
     bg: 'rgba(245,166,35,0.10)',
     border: 'rgba(245,166,35,0.22)',
     title: 'Verified Tipsters',
-    desc: 'Only tipsters with proven track records and screenshot verification earn the gold Verified badge. Filter by it to find the best.',
+    desc: 'Only tipsters with proven track records and strong win rates earn the gold Verified badge. Filter by it to find the best.',
   },
   {
     icon: '📊',
@@ -101,7 +101,7 @@ const features = [
     bg: 'rgba(245,166,35,0.10)',
     border: 'rgba(245,166,35,0.22)',
     title: 'Dispute System',
-    desc: 'If a result is contested, our verification team reviews screenshot proof and settles it fairly. Tipsters can\'t game the system.',
+    desc: 'If a result is contested, our team cross-checks live sports data and settles it fairly within 24 hours. Tipsters can\'t game the system.',
   },
 ];
 

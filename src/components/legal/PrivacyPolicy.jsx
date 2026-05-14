@@ -48,7 +48,7 @@ export default function PrivacyPolicy() {
         <li><strong>Transaction data:</strong> Payment records, wallet balances, escrow history, slip purchase and sale records</li>
         <li><strong>Usage data:</strong> App interactions, pages viewed, feature usage, session timestamps</li>
         <li><strong>Device data:</strong> Device model, OS version, app version, IP address, push notification token</li>
-        <li><strong>Content data:</strong> Slip codes you post, result screenshots you upload, reviews you submit</li>
+        <li><strong>Content data:</strong> Slip codes you post, reviews you submit, and dispute information where applicable</li>
         <li><strong>Bank data:</strong> Bank account details for withdrawal (stored securely; card numbers never stored by Slipr)</li>
       </ul>
 
@@ -57,7 +57,7 @@ export default function PrivacyPolicy() {
       <ul>
         <li>Operate, maintain, and improve the Slipr Platform</li>
         <li>Process payments, manage escrow, and settle transactions</li>
-        <li>Verify result screenshots and resolve disputes</li>
+        <li>Auto-verify results using live sports data and resolve disputes</li>
         <li>Send transactional notifications (purchase confirmations, refund alerts, settlement notices)</li>
         <li>Detect and prevent fraud, abuse, and platform manipulation</li>
         <li>Comply with legal and regulatory obligations</li>

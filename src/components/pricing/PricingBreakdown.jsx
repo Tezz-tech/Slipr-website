@@ -19,10 +19,10 @@ const Section = styled.section`
 const SplitCard = styled(motion.div)`
   max-width: 640px;
   margin: 56px auto 80px;
-  background: rgba(255,255,255,0.88);
+  background: rgba(255,255,255,0.04);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255,255,255,0.95);
+  border: 1px solid rgba(255,255,255,0.08);
   border-radius: 28px;
   padding: 40px;
   box-shadow: ${shadows.md};
@@ -143,7 +143,7 @@ const Table = styled(motion.div)`
 const TableHead = styled.div`
   display: grid;
   grid-template-columns: 1.5fr 1fr 1fr 1fr;
-  background: ${colors.text.primary};
+  background: ${colors.surface};
   padding: 0;
 
   @media (max-width: ${breakpoints.md}) { display: none; }
@@ -162,7 +162,7 @@ const TableRow = styled(motion.div)`
   display: grid;
   grid-template-columns: 1.5fr 1fr 1fr 1fr;
   border-bottom: 1px solid ${colors.border};
-  background: ${({ $alt }) => $alt ? 'rgba(0,0,0,0.01)' : 'rgba(255,255,255,0.85)'};
+  background: ${({ $alt }) => $alt ? 'rgba(255,255,255,0.02)' : 'rgba(255,255,255,0.04)'};
 
   &:last-child { border-bottom: none; }
 
@@ -208,7 +208,7 @@ const rows = [
   { feature: 'Transparent win history', slipr: true, whatsapp: false, telegram: false },
   { feature: 'Escrow-protected payment', slipr: true, whatsapp: false, telegram: false },
   { feature: 'Dispute resolution', slipr: true, whatsapp: false, telegram: false },
-  { feature: 'Slip screenshot proof', slipr: true, whatsapp: false, telegram: false },
+  { feature: 'Auto-verified results', slipr: true, whatsapp: false, telegram: false },
   { feature: 'In-app wallet', slipr: true, whatsapp: false, telegram: false },
 ];
 
@@ -250,7 +250,7 @@ export default function PricingBreakdown() {
             ₦100
           </BarSegment>
           <BarSegment
-            $bg={colors.text.primary}
+            $bg={colors.surfaceElevated}
             initial={{ width: 0 }}
             whileInView={{ width: '90.9%' }}
             viewport={{ once: true }}
@@ -273,7 +273,7 @@ export default function PricingBreakdown() {
           </SplitRow>
           <SplitRow>
             <SplitLeft>
-              <SplitDot $color={colors.text.primary} />
+              <SplitDot $color={colors.surfaceElevated} />
               <div>
                 <SplitName>Escrow lock</SplitName>
                 <SplitNote>— held until result is confirmed</SplitNote>
@@ -286,10 +286,20 @@ export default function PricingBreakdown() {
               <SplitDot $color={colors.win} />
               <div>
                 <SplitName>Slip wins → Tipster earns</SplitName>
-                <SplitNote>— released from escrow on verified win</SplitNote>
+                <SplitNote>— 90% of escrow released on verified win</SplitNote>
               </div>
             </SplitLeft>
-            <SplitAmount $color={colors.win}>₦1,000</SplitAmount>
+            <SplitAmount $color={colors.win}>₦900</SplitAmount>
+          </SplitRow>
+          <SplitRow>
+            <SplitLeft>
+              <SplitDot $color={colors.accent} />
+              <div>
+                <SplitName>Slip wins → Slipr commission</SplitName>
+                <SplitNote>— 10% platform cut on every win</SplitNote>
+              </div>
+            </SplitLeft>
+            <SplitAmount $color={colors.accent}>₦100</SplitAmount>
           </SplitRow>
           <SplitRow>
             <SplitLeft>

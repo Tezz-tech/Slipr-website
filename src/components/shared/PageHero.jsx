@@ -3,10 +3,12 @@
  * Gradient orb background, staggered headline + subtext animation.
  * Used by all pages except Home (which has its own custom hero).
  */
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { colors, fonts, spacing, breakpoints } from '../../theme';
+
+const FloatBallsScene = lazy(() => import('../three/FloatBallsScene'));
 
 const HeroSection = styled.section`
   min-height: 52vh;
@@ -102,6 +104,9 @@ const Subtitle = styled(motion.p)`
 export default function PageHero({ eyebrow, title, subtitle }) {
   return (
     <HeroSection>
+      <Suspense fallback={null}>
+        <FloatBallsScene style={{ opacity: 0.22 }} />
+      </Suspense>
       <GridOverlay />
       <OrbLeft />
       <OrbRight />

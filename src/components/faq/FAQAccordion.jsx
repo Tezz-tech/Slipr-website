@@ -49,10 +49,10 @@ const AccordionList = styled(motion.div)`
 `;
 
 const Item = styled.div`
-  background: rgba(255,255,255,0.85);
+  background: rgba(255,255,255,0.04);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255,255,255,0.95);
+  border: 1px solid rgba(255,255,255,0.08);
   border-radius: ${radii.lg};
   overflow: hidden;
   box-shadow: ${shadows.xs};
@@ -128,11 +128,11 @@ const categories = [
     id: 'tipsters',
     label: 'For Tipsters',
     faqs: [
-      { q: 'When exactly does escrow release my payment?', a: 'After the event ends, tipsters upload their result screenshot. Our system cross-references it with public data. Once verified — typically within 15 minutes — the ₦1,000 per winning buyer is credited to your wallet.' },
+      { q: 'When exactly does escrow release my payment?', a: 'After the event ends, our system automatically cross-checks the result against live sports data. Once confirmed — typically within 15 minutes — ₦900 per winning buyer is credited to your wallet.' },
       { q: 'Can I post multiple slips for the same event?', a: 'Yes. You can post as many slips as you like simultaneously. Each slip is individually priced and settled. However, be aware that buyers will see your win rate across all slips — posting low-quality slips will hurt your overall record.' },
       { q: 'What happens to my escrow payment if only 1 out of 10 buyers have paid by kickoff?', a: 'Each buyer who unlocks your slip represents a separate escrow. If 10 buyers unlock it and it wins, you receive ₦10,000 (₦1,000 × 10). Settlement is per-buyer, not per-slip.' },
       { q: 'Can I delete a slip after someone has bought it?', a: 'No. Once a buyer has unlocked a slip, the code is revealed and the transaction is binding. You cannot edit or delete settled slips. Unsold slips can be taken down before their first purchase.' },
-      { q: 'How long does it take to get the Verified badge?', a: 'There\'s no fixed timeline — it depends on your activity. Meet the criteria (50+ slips, 60%+ win rate, screenshot verification enabled, 4.2+ rating, no disputes in 90 days) and the badge is automatically awarded within 24 hours of qualifying.' },
+      { q: 'How long does it take to get the Verified badge?', a: 'There\'s no fixed timeline — it depends on your activity. Meet the criteria (50+ slips, 60%+ win rate, 4.2+ rating, no disputes in 90 days) and the badge is automatically awarded within 24 hours of qualifying.' },
       { q: 'Does a lost slip affect my win rate permanently?', a: 'Yes. Every slip result — win or loss — is permanent and public. This is intentional. It prevents tipsters from cherry-picking their results. Your honest track record is what builds buyer trust over time.' },
     ],
   },
@@ -151,7 +151,7 @@ const categories = [
     id: 'safety',
     label: 'Trust & Safety',
     faqs: [
-      { q: 'How do you prevent tipsters from faking screenshots?', a: 'Our verification team checks screenshots against publicly available match result databases and betting platform identifiers. We also use ML-assisted image verification to flag altered screenshots. Tipsters caught faking are permanently banned.' },
+      { q: 'How are results verified?', a: 'Results are verified automatically using live sports data from official sources — no manual uploads, no human bias. The system cross-references the slip code with confirmed match outcomes. Tipsters cannot alter or influence the outcome. Any mismatch triggers an automatic review and the tipster account is flagged.' },
       { q: 'What if a tipster disputes a loss result?', a: 'Tipsters can raise a dispute within 2 hours of a result being marked. Our team reviews both sides\' evidence within 24 hours. During review, escrow stays locked — no refunds or payouts until the dispute is resolved.' },
       { q: 'Can a tipster run away after getting paid?', a: 'The escrow model makes "running away" structurally impossible. The tipster never holds your money. It sits with Slipr until the result. If they win, they get paid automatically. If they lose, you get refunded automatically. No human intervention needed on either side.' },
       { q: 'Are minors prevented from using the platform?', a: 'Yes. Account verification requires a phone number and at a minimum age-gate of 18. We\'re implementing BVN-linked age verification for higher-volume accounts. Using the platform under 18 is a violation of our Terms of Service.' },

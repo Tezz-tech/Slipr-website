@@ -4,12 +4,14 @@
  * floating phone mockup (infinite y keyframes), two CTAs.
  * Subtle dot grid overlay for texture.
  */
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 import { Link } from 'react-router-dom';
 import styled, { keyframes } from 'styled-components';
 import { motion } from 'framer-motion';
 import { colors, fonts, spacing, breakpoints, radii, shadows } from '../../theme';
 import Button from '../shared/Button';
+
+const StadiumHeroScene = lazy(() => import('../three/StadiumHeroScene'));
 
 const Section = styled.section`
   min-height: 100vh;
@@ -24,36 +26,16 @@ const Section = styled.section`
   @media (max-width: ${breakpoints.md}) { padding: 100px 20px 64px; }
 `;
 
-/* Background gradient orbs */
-const OrbTeal = styled.div`
-  position: absolute;
-  top: -200px;
-  left: -200px;
-  width: 700px;
-  height: 700px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(0,194,168,0.12) 0%, transparent 65%);
-  pointer-events: none;
-`;
-
-const OrbGold = styled.div`
-  position: absolute;
-  bottom: -150px;
-  right: -100px;
-  width: 550px;
-  height: 550px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(245,166,35,0.08) 0%, transparent 65%);
-  pointer-events: none;
-`;
-
-const DotGrid = styled.div`
+const CanvasOverlay = styled.div`
   position: absolute;
   inset: 0;
-  background-image: radial-gradient(${colors.border} 1px, transparent 1px);
-  background-size: 32px 32px;
+  background: linear-gradient(
+    to bottom,
+    rgba(6,6,14,0.15) 0%,
+    rgba(6,6,14,0.0) 40%,
+    rgba(6,6,14,0.5) 100%
+  );
   pointer-events: none;
-  mask-image: radial-gradient(ellipse 80% 90% at 50% 50%, black 50%, transparent 100%);
 `;
 
 const Inner = styled.div`
@@ -187,7 +169,7 @@ const PhoneFloat = styled(motion.div)`
 const PhoneShell = styled.div`
   width: 260px;
   height: 520px;
-  background: ${colors.text.primary};
+  background: #18181F;
   border-radius: 40px;
   padding: 16px 14px;
   box-shadow: 0 40px 80px rgba(0,0,0,0.25), 0 8px 24px rgba(0,0,0,0.14);
@@ -365,15 +347,15 @@ const UnlockBtn = styled.div`
   border-radius: 8px;
 `;
 
-/* Orbiting elements around phone */
 const FloatingBadge = styled(motion.div)`
   position: absolute;
-  background: rgba(255,255,255,0.95);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255,255,255,0.9);
+  background: rgba(17, 17, 30, 0.88);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border: 1px solid rgba(255,255,255,0.12);
   border-radius: 14px;
   padding: 10px 14px;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.10);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.5), 0 0 20px rgba(0,194,168,0.08);
   display: flex;
   align-items: center;
   gap: 8px;
@@ -410,9 +392,10 @@ const slipCards = [
 export default function Hero() {
   return (
     <Section>
-      <DotGrid />
-      <OrbTeal />
-      <OrbGold />
+      <Suspense fallback={null}>
+        <StadiumHeroScene />
+      </Suspense>
+      <CanvasOverlay />
 
       <Inner>
         <TextSide>
@@ -485,9 +468,9 @@ export default function Hero() {
 
         <PhoneSide>
           <PhoneFloat
-            animate={{ y: [-12, 0, -12] }}
-            transition={{ duration: 3.2, ease: 'easeInOut', repeat: Infinity }}
-            initial={{ opacity: 0, scale: 0.92 }}
+            // animate={{ y: [-12, 0, -12] }}
+            // transition={{ duration: 3.2, ease: 'easeInOut', repeat: Infinity }}
+            // initial={{ opacity: 0, scale: 0.92 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
           >

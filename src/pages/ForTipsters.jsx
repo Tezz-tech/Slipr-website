@@ -2,11 +2,14 @@
  * ForTipsters — /tipsters route
  * Hero + How to start + Earnings Calculator + Verified Badge + Success Stories + Requirements + CTA
  */
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 import { Link } from 'react-router-dom';
+import SectionBridge from '../components/shared/SectionBridge';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { colors as c, spacing, breakpoints, radii } from '../theme';
+
+const CoinsRainScene = lazy(() => import('../components/three/CoinsRainScene'));
 import PageHero from '../components/shared/PageHero';
 import EarningsCalculator from '../components/tipsters/EarningsCalculator';
 import VerifiedBadgeInfo from '../components/tipsters/VerifiedBadgeInfo';
@@ -84,9 +87,9 @@ const ReqItem = styled(motion.div)`
   align-items: flex-start;
   gap: 12px;
   padding: 18px;
-  background: rgba(255,255,255,0.75);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255,255,255,0.92);
+  background: rgba(255,255,255,0.04);
+  backdrop-filter: blur(16px) saturate(180%);
+  border: 1px solid rgba(255,255,255,0.08);
   border-radius: ${radii.lg};
 `;
 
@@ -106,6 +109,8 @@ const DownloadSection = styled.section`
   padding: 96px 80px;
   background: ${c.surface};
   text-align: center;
+  position: relative;
+  overflow: hidden;
 
   @media (max-width: ${breakpoints.lg}) { padding: 80px 40px; }
   @media (max-width: ${breakpoints.md}) { padding: 72px 20px; }
@@ -114,13 +119,12 @@ const DownloadSection = styled.section`
 const startSteps = [
   { n: '01', title: 'Create your account', desc: 'Sign up free with your phone number. No subscription. No waiting for approval.' },
   { n: '02', title: 'Post your first slip', desc: 'Enter your slip code, pick your sport, set your price. Your win rate starts from zero and grows with every result.' },
-  { n: '03', title: 'Get paid on wins', desc: 'Every winning slip releases ₦1,000 from escrow to your wallet. Withdraw anytime to your Nigerian bank account.' },
+  { n: '03', title: 'Get paid on wins', desc: 'Every winning slip releases ₦900 from escrow to your wallet — after a 10% platform fee. Withdraw anytime to your Nigerian bank account.' },
 ];
 
 const requirements = [
-  { icon: '📱', text: 'Valid Nigerian phone number for account verification' },
   { icon: '🏦', text: 'Active Nigerian bank account for withdrawals' },
-  { icon: '📸', text: 'Ability to upload result screenshots for settlement' },
+  { icon: '📡', text: 'Results auto-verified via live sports data — no manual uploads needed' },
   { icon: '🎯', text: 'Genuine betting knowledge — not required, but it pays off' },
   { icon: '⚖️', text: 'Agreement to Slipr\'s tipster conduct guidelines' },
   { icon: '🔞', text: 'Must be 18 years or older to participate' },
@@ -191,7 +195,10 @@ export default function ForTipsters() {
       </RequirementsSection>
 
       <DownloadSection>
-        <motion.div
+        <Suspense fallback={null}>
+          <CoinsRainScene style={{ opacity: 0.35 }} />
+        </Suspense>
+        <motion.div style={{ position: 'relative', zIndex: 2 }}
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -210,6 +217,17 @@ export default function ForTipsters() {
           </div>
         </motion.div>
       </DownloadSection>
+
+      <SectionBridge
+        variant="coins"
+        label="TRANSPARENT PRICING"
+        title="See exactly <em>what you keep</em>"
+        subtitle="No surprises. One simple platform cut — the rest goes straight to your wallet on every win."
+        cta="View pricing"
+        to="/pricing"
+        achievement={{ icon: '💰', text: 'Earnings Unlocked' }}
+        xp={200}
+      />
     </main>
   );
 }

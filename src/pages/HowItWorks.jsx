@@ -5,6 +5,7 @@
  */
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import SectionBridge from '../components/shared/SectionBridge';
 import styled from 'styled-components';
 import { AnimatePresence, motion } from 'framer-motion';
 import { colors as themeColors, spacing as themeSpacing, breakpoints as bp } from '../theme';
@@ -56,10 +57,10 @@ const CTAGrid = styled.div`
 `;
 
 const CTACard = styled(motion.div)`
-  background: rgba(255,255,255,0.80);
+  background: rgba(255,255,255,0.04);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255,255,255,0.95);
+  border: 1px solid rgba(255,255,255,0.08);
   border-radius: 20px;
   padding: 28px;
   text-align: center;
@@ -173,6 +174,17 @@ export default function HowItWorks() {
           </CTACard>
         </CTAGrid>
       </CTASection>
+
+      <SectionBridge
+        variant="network"
+        label="BECOME A TIPSTER"
+        title="Your wins are worth <em>real money</em>"
+        subtitle="Join thousands of Nigerian tipsters already turning verified picks into consistent income."
+        cta="Start earning"
+        to="/tipsters"
+        achievement={{ icon: '🎯', text: 'Tipster Path Unlocked' }}
+        xp={150}
+      />
     </main>
   );
 }

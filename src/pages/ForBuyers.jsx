@@ -2,12 +2,15 @@
  * ForBuyers — /buyers route
  * Hero + Escrow Explainer + Refund Policy + Trust & Safety + CTA
  */
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { colors, spacing, breakpoints } from '../theme';
+
+const ShieldOrbScene = lazy(() => import('../components/three/ShieldOrbScene'));
 import PageHero from '../components/shared/PageHero';
+import SectionBridge from '../components/shared/SectionBridge';
 import EscrowExplainer from '../components/buyers/EscrowExplainer';
 import RefundPolicy from '../components/buyers/RefundPolicy';
 import TrustSafety from '../components/buyers/TrustSafety';
@@ -17,6 +20,8 @@ const CTASection = styled.section`
   padding: ${spacing.section} 80px;
   background: ${colors.surface};
   text-align: center;
+  position: relative;
+  overflow: hidden;
 
   @media (max-width: ${breakpoints.lg}) { padding: ${spacing.section} 40px; }
   @media (max-width: ${breakpoints.md}) { padding: 72px 20px; }
@@ -36,7 +41,11 @@ export default function ForBuyers() {
       <TrustSafety />
 
       <CTASection>
+        <Suspense fallback={null}>
+          <ShieldOrbScene style={{ opacity: 0.3 }} />
+        </Suspense>
         <motion.div
+          style={{ position: 'relative', zIndex: 2 }}
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -57,6 +66,17 @@ export default function ForBuyers() {
           </div>
         </motion.div>
       </CTASection>
+
+      <SectionBridge
+        variant="shield"
+        label="HOW IT WORKS"
+        title="Your money is <em>always protected</em>"
+        subtitle="Escrow holds every naira until the outcome is confirmed. You only pay for what actually delivers."
+        cta="See the full flow"
+        to="/how-it-works"
+        achievement={{ icon: '🛡️', text: 'Trust Shield Active' }}
+        xp={175}
+      />
     </main>
   );
 }

@@ -76,7 +76,7 @@ export default function RefundPolicy() {
         <li>The slip event result in a loss</li>
         <li>The event is postponed, cancelled, or abandoned without a result</li>
         <li>The Tipster submits an invalid or incorrect slip code (verified by Slipr)</li>
-        <li>The Tipster fails to submit a result screenshot within the 4-hour window after event conclusion</li>
+        <li>The event result cannot be verified via live sports data within 4 hours of event conclusion</li>
         <li>Slipr's dispute resolution team rules in the Buyer's favour</li>
       </ul>
 
@@ -87,13 +87,13 @@ export default function RefundPolicy() {
         </thead>
         <tbody>
           <tr><td>Slip loses</td><td>Non-refundable</td><td>Refunded to Buyer wallet</td></tr>
-          <tr><td>Slip wins</td><td>Non-refundable</td><td>Released to Tipster wallet</td></tr>
+          <tr><td>Slip wins</td><td>Non-refundable</td><td>₦900 released to Tipster; ₦100 Slipr commission</td></tr>
           <tr><td>Event cancelled/postponed</td><td>Non-refundable</td><td>Refunded to Buyer wallet</td></tr>
           <tr><td>Invalid slip code (tipster error)</td><td>Refunded</td><td>Refunded to Buyer wallet</td></tr>
           <tr><td>Buyer changes mind after unlock</td><td>Non-refundable</td><td>Non-refundable (code revealed)</td></tr>
           <tr><td>Result under dispute — Buyer wins</td><td>Non-refundable</td><td>Refunded to Buyer wallet</td></tr>
           <tr><td>Result under dispute — Tipster wins</td><td>Non-refundable</td><td>Released to Tipster wallet</td></tr>
-          <tr><td>Screenshot verification failure</td><td>Non-refundable</td><td>Refunded to Buyer wallet</td></tr>
+          <tr><td>Result unverifiable via live data</td><td>Non-refundable</td><td>Refunded to Buyer wallet</td></tr>
         </tbody>
       </table>
 

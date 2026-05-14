@@ -73,10 +73,10 @@ const TimelineDesc = styled.div`
 `;
 
 const PolicyCard = styled(motion.div)`
-  background: rgba(255,255,255,0.80);
+  background: rgba(255,255,255,0.04);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255,255,255,0.95);
+  border: 1px solid rgba(255,255,255,0.08);
   border-radius: ${radii.xl};
   padding: 24px;
   box-shadow: ${shadows.xs};
@@ -135,7 +135,7 @@ export default function RefundPolicy() {
           >
             {[
               { icon: '🏁', bg: colors.surface, border: colors.border, title: 'Slip event ends', desc: 'The match, game, or event your slip was based on concludes.' },
-              { icon: '📸', bg: colors.accentLight, border: colors.accentMid, title: 'Result verified (0–15 min)', desc: 'Tipster uploads screenshot. Platform cross-checks with official sources.' },
+              { icon: '📡', bg: colors.accentLight, border: colors.accentMid, title: 'Result verified (0–15 min)', desc: 'Our system cross-checks the result against live sports data automatically.' },
               { icon: '❌', bg: colors.lossLight, border: 'rgba(231,76,60,0.22)', title: 'Loss confirmed', desc: 'System detects the slip lost based on verified result data.' },
               { icon: '💳', bg: colors.winLight, border: 'rgba(46,204,113,0.22)', title: 'Refund hits your wallet', desc: '₦1,000 appears in your Slipr wallet automatically — no action required.' },
               { icon: '🏦', bg: colors.accentLight, border: colors.accentMid, title: 'Withdraw anytime', desc: 'Transfer to your bank instantly or use the balance for another slip.' },
@@ -162,7 +162,6 @@ export default function RefundPolicy() {
             {[
               { icon: '✅', condition: 'Slip loses', result: 'Full ₦1,000 refund to wallet', type: 'win' },
               { icon: '⏰', condition: 'Match postponed or cancelled', result: 'Full ₦1,000 refund within 48 hours', type: 'win' },
-              { icon: '🚫', condition: 'Invalid slip code (tipster error)', result: 'Full ₦1,100 refund including platform fee', type: 'win' },
               { icon: '🏆', condition: 'Slip wins', result: 'No refund — ₦1,000 released to tipster', type: 'neutral' },
               { icon: '💡', condition: 'Buyer changes mind after purchase', result: 'No refund — code already revealed', type: 'loss' },
               { icon: '⚠️', condition: 'Disputed result under review', result: 'Escrow held until resolution (≤24h)', type: 'neutral' },
