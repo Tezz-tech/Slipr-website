@@ -129,7 +129,7 @@ export default function Team() {
         subtext="We're a small team of builders, analysts, and designers obsessed with trust and transparency."
       />
 
-      <TeamGrid
+      {/* <TeamGrid
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
@@ -144,7 +144,7 @@ export default function Team() {
             </GlassCard>
           </TeamCard>
         ))}
-      </TeamGrid>
+      </TeamGrid> */}
 
       <ValuesTitle>What we stand for</ValuesTitle>
       <ValuesGrid
